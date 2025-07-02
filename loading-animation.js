@@ -43,7 +43,7 @@ if (!sessionStorage.getItem('loadingAnimationShown')) {
     .loading-logo i {
         margin-right: 12px;
         font-size: 2.2rem;
-        animation: pulse 5.0s infinite ease-in-out;
+        animation: pulse 1.4s infinite ease-in-out;
     }
     .loading-bar {
         width: 200px;
@@ -57,7 +57,7 @@ if (!sessionStorage.getItem('loadingAnimationShown')) {
         width: 0%;
         background-color: white;
         border-radius: 2px;
-        transition: width 5.0s ease;
+        transition: width 0.5s ease;
     }
     @keyframes pulse {
         0% { transform: scale(1); }
