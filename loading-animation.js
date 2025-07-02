@@ -41,7 +41,7 @@ body:not(.loaded) {
 .loading-logo i {
     margin-right: 12px;
     font-size: 2.2rem;
-    animation: pulse 1.5s infinite ease-in-out;
+    animation: pulse 2.5s infinite ease-in-out;
 }
 .loading-bar {
     width: 200px;
