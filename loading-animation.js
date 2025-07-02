@@ -1,6 +1,6 @@
 // loading-animation.js
 
-document.addEventListener('DOMContentLoaded', function() {
+function showLoadingAnimation() {
     // 1. Criar elementos da tela de carregamento
     const loadingScreen = document.createElement('div');
     loadingScreen.className = 'loading-screen';
@@ -116,7 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 loadingScreen.remove();
                 style.remove();
+                // Marcar que a animação já foi mostrada
+                sessionStorage.setItem('loadingAnimationShown', 'true');
             }, 500);
         }
     }, intervalTime);
-});
+}
+
+// Verificar se é a primeira visita na sessão
+if (!sessionStorage.getItem('loadingAnimationShown')) {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pequeno delay para garantir que tudo está pronto
+        setTimeout(showLoadingAnimation, 100);
+    });
+}
