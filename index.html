@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gestão de Clientes | Sistema Completo</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
@@ -34,39 +34,41 @@
             background-color: #f5f7fa;
             color: var(--dark-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             border-radius: var(--border-radius);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             box-shadow: var(--box-shadow);
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
 
         header p {
             opacity: 0.9;
+            font-size: 0.9rem;
         }
 
         .card {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 20px;
+            margin-bottom: 20px;
             transition: var(--transition);
         }
 
@@ -76,38 +78,40 @@
         }
 
         .card-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             color: var(--primary-color);
             border-bottom: 2px solid var(--light-color);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .card-title i {
-            margin-right: 10px;
+            margin-right: 8px;
+            font-size: 1.1rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
             color: var(--dark-color);
+            font-size: 0.9rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 10px 12px;
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
@@ -117,23 +121,29 @@
             box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
         }
 
+        textarea.form-control {
+            min-height: 80px;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 24px;
+            padding: 10px 18px;
             border: none;
             border-radius: var(--border-radius);
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .btn i {
-            margin-right: 8px;
+            margin-right: 6px;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -173,29 +183,34 @@
         }
 
         .btn-sm {
-            padding: 8px 16px;
-            font-size: 0.9rem;
+            padding: 6px 12px;
+            font-size: 0.85rem;
         }
 
         .btn-group {
             display: flex;
-            gap: 10px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .table-responsive {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 15px 0;
+            min-width: 600px;
         }
 
         th, td {
-            padding: 12px 15px;
+            padding: 10px 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            font-size: 0.9rem;
         }
 
         th {
@@ -210,9 +225,9 @@
 
         .badge {
             display: inline-block;
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -230,16 +245,20 @@
         .tabs {
             display: flex;
             border-bottom: 1px solid #ddd;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .tab {
-            padding: 12px 20px;
+            padding: 10px 15px;
             cursor: pointer;
             font-weight: 500;
             color: var(--dark-color);
             border-bottom: 3px solid transparent;
             transition: var(--transition);
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .tab.active {
@@ -265,13 +284,14 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             overflow-y: auto;
+            padding: 15px;
         }
 
         .modal-content {
             background-color: white;
-            margin: 50px auto;
+            margin: 20px auto;
             max-width: 800px;
-            width: 90%;
+            width: 100%;
             border-radius: var(--border-radius);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s;
@@ -289,7 +309,7 @@
         }
 
         .modal-header {
-            padding: 20px;
+            padding: 15px;
             border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
@@ -299,22 +319,24 @@
         .modal-header h3 {
             margin: 0;
             color: var(--primary-color);
+            font-size: 1.2rem;
         }
 
         .modal-body {
-            padding: 20px;
+            padding: 15px;
         }
 
         .modal-footer {
-            padding: 20px;
+            padding: 15px;
             border-top: 1px solid #eee;
             display: flex;
             justify-content: flex-end;
-            gap: 10px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .close {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: #aaa;
             cursor: pointer;
@@ -327,12 +349,12 @@
 
         .client-details {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
 
         .detail-group {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .detail-label {
@@ -340,12 +362,14 @@
             color: var(--dark-color);
             margin-bottom: 5px;
             display: block;
+            font-size: 0.9rem;
         }
 
         .detail-value {
-            padding: 10px;
+            padding: 8px;
             background-color: var(--light-color);
             border-radius: var(--border-radius);
+            font-size: 0.95rem;
         }
 
         .print-only {
@@ -373,61 +397,70 @@
             .print-only {
                 display: block;
                 text-align: center;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
         }
 
         .empty-state {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 15px;
             color: #666;
         }
 
         .empty-state i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #ddd;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .empty-state h3 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--dark-color);
+            font-size: 1.2rem;
+        }
+
+        .empty-state p {
+            font-size: 0.9rem;
         }
 
         .search-filter {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-direction: column;
         }
 
         .search-box {
             flex: 1;
             position: relative;
+            width: 100%;
         }
 
         .search-box i {
             position: absolute;
-            left: 15px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: #999;
+            font-size: 0.9rem;
         }
 
         .search-box input {
-            padding-left: 40px;
+            padding-left: 35px;
+            width: 100%;
         }
 
         .filter-select {
-            width: 200px;
+            width: 100%;
         }
 
         .toast {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             background-color: var(--success-color);
             color: white;
-            padding: 15px 25px;
+            padding: 12px 20px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             display: flex;
@@ -436,6 +469,8 @@
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.3s ease;
+            max-width: 90%;
+            font-size: 0.9rem;
         }
 
         .toast.show {
@@ -444,12 +479,12 @@
         }
 
         .toast i {
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
         .avatar {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: var(--primary-color);
             color: white;
@@ -457,20 +492,112 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .client-details {
-                grid-template-columns: 1fr;
+        .actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Media Queries para telas maiores */
+        @media (min-width: 768px) {
+            .container {
+                padding: 20px;
             }
-            
+
+            header {
+                padding: 20px 0;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .card-title {
+                font-size: 1.4rem;
+            }
+
             .search-filter {
-                flex-direction: column;
+                flex-direction: row;
+            }
+
+            .filter-select {
+                width: 200px;
+            }
+
+            .client-details {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .btn {
+                padding: 12px 20px;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .modal-content {
+                width: 80%;
+            }
+        }
+
+        /* Ajustes específicos para a tabela em mobile */
+        @media (max-width: 767px) {
+            table {
+                font-size: 0.85rem;
             }
             
-            .filter-select {
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            .btn-sm {
+                padding: 5px 8px;
+                font-size: 0.8rem;
+            }
+            
+            .btn-sm i {
+                margin-right: 3px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
                 width: 100%;
+            }
+            
+            .btn-group .btn {
+                width: 100%;
+            }
+            
+            .modal-footer {
+                justify-content: center;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+                margin-bottom: 8px;
             }
         }
     </style>
@@ -578,9 +705,10 @@
                     <p>Comece cadastrando seu primeiro cliente no formulário ao lado</p>
                 </div>
 
-                <div class="actions no-print" style="margin-top: 20px;">
+                <div class="actions no-print">
                     <button onclick="exportarTodosPDF()" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Exportar Todos (PDF)</button>
                     <button onclick="exportarCSV()" class="btn btn-success"><i class="fas fa-file-csv"></i> Exportar (CSV)</button>
+                    <button onclick="limparTodosClientes()" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Remover Todos</button>
                 </div>
             </div>
         </div>
@@ -595,8 +723,8 @@
             </div>
             <div class="modal-body">
                 <div class="print-only">
-                    <h2 style="text-align: center; margin-bottom: 20px;">Ficha Cadastral do Cliente</h2>
-                    <p style="text-align: center; margin-bottom: 30px;">Emitido em: <span id="dataEmissao"></span></p>
+                    <h2 style="text-align: center; margin-bottom: 15px;">Ficha Cadastral do Cliente</h2>
+                    <p style="text-align: center; margin-bottom: 20px;">Emitido em: <span id="dataEmissao"></span></p>
                 </div>
                 
                 <div class="client-details" id="clientDetails">
@@ -636,6 +764,15 @@
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 3000);
+        }
+
+        // Função para limpar todos os clientes
+        function limparTodosClientes() {
+            if (confirm('ATENÇÃO! Isso irá apagar TODOS os clientes cadastrados. Deseja continuar?')) {
+                localStorage.removeItem('clientes');
+                listarClientes();
+                showToast('Todos os clientes foram removidos com sucesso!', 'warning');
+            }
         }
 
         // Função para formatar data
@@ -745,7 +882,7 @@
                     <div class="detail-label">Data de Cadastro</div>
                     <div class="detail-value">${formatarData(cliente.dataCadastro)}</div>
                 </div>
-                <div class="detail-group" style="grid-column: span 2;">
+                <div class="detail-group">
                     <div class="detail-label">Observações</div>
                     <div class="detail-value" style="min-height: 60px;">${cliente.observacoes || 'Nenhuma observação cadastrada.'}</div>
                 </div>
@@ -1010,9 +1147,11 @@
                         ${formatarData(cliente.dataCadastro)}
                     </td>
                     <td class="no-print">
-                        <button onclick="abrirModalCliente('${cliente.id}')" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> Ver</button>
-                        <button onclick="editarCliente('${cliente.id}')" class="btn btn-sm btn-success"><i class="fas fa-edit"></i> Editar</button>
-                        <button onclick="excluirCliente('${cliente.id}')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Excluir</button>
+                        <div class="btn-group">
+                            <button onclick="abrirModalCliente('${cliente.id}')" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> Ver</button>
+                            <button onclick="editarCliente('${cliente.id}')" class="btn btn-sm btn-success"><i class="fas fa-edit"></i> Editar</button>
+                            <button onclick="excluirCliente('${cliente.id}')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Excluir</button>
+                        </div>
                     </td>
                 `;
                 corpoTabela.appendChild(row);
@@ -1117,26 +1256,26 @@
             showToast('Cliente excluído com sucesso!');
         }
 
-            // Event listeners para as abas - VERSÃO CORRIGIDA
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Remove a classe active de todas as abas
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            // Adiciona a classe active apenas na aba clicada
-            this.classList.add('active');
-            
-            // Remove a classe active de todos os conteúdos
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            // Adiciona a classe active apenas no conteúdo correspondente
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-            
-            // Se for a aba de listagem, atualiza a lista
-            if (tabId === 'lista') {
-                listarClientes();
-            }
+        // Event listeners para as abas
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove a classe active de todas as abas
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                // Adiciona a classe active apenas na aba clicada
+                this.classList.add('active');
+                
+                // Remove a classe active de todos os conteúdos
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                // Adiciona a classe active apenas no conteúdo correspondente
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Se for a aba de listagem, atualiza a lista
+                if (tabId === 'lista') {
+                    listarClientes();
+                }
+            });
         });
-    });
 
         // Event listeners para o modal
         document.querySelector('.close').addEventListener('click', fecharModal);
@@ -1191,10 +1330,44 @@
             e.target.value = value;
         });
 
-           // Carrega a lista de clientes quando a página é carregada
+        // Carrega a lista de clientes quando a página é carregada
         window.onload = function() {
             // Garante que a aba ativa seja mostrada corretamente
             document.querySelector('.tab.active').click();
+            
+            // Verifica se há clientes cadastrados
+            if (!localStorage.getItem('clientes')) {
+                // Dados de exemplo (opcional)
+                const clientesExemplo = [
+                    {
+                        id: gerarId(),
+                        nome: 'João Silva',
+                        cpf: '12345678901',
+                        email: 'joao@exemplo.com',
+                        telefone: '(11) 98765-4321',
+                        endereco: 'Rua Exemplo, 123 - Centro - São Paulo/SP',
+                        dataNascimento: '1985-05-15',
+                        profissao: 'Engenheiro',
+                        observacoes: 'Cliente preferencial',
+                        dataCadastro: new Date().toISOString()
+                    },
+                    {
+                        id: gerarId(),
+                        nome: 'Maria Oliveira',
+                        cpf: '98765432109',
+                        email: 'maria@exemplo.com',
+                        telefone: '(21) 99876-5432',
+                        endereco: 'Av. Brasil, 456 - Copacabana - Rio de Janeiro/RJ',
+                        dataNascimento: '1990-08-22',
+                        profissao: 'Médica',
+                        observacoes: '',
+                        dataCadastro: new Date(Date.now() - 86400000).toISOString() // Ontem
+                    }
+                ];
+                
+                localStorage.setItem('clientes', JSON.stringify(clientesExemplo));
+                listarClientes();
+            }
         };
     </script>
 </body>
