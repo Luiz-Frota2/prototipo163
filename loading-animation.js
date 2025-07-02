@@ -55,7 +55,7 @@ body:not(.loaded) {
     width: 0%;
     background-color: white;
     border-radius: 2px;
-    transition: width 0.4s ease;
+    transition: width 2.0s ease;
 }
 @keyframes pulse {
     0% { transform: scale(1); }
